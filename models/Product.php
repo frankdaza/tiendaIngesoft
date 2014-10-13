@@ -38,5 +38,16 @@ class Product {
 		}
 		else return false;
 	}
+
+	/**
+	* @param $id ID del producto a eliminar.
+	* @return bool true si se elimina el producto,
+	* false de lo contrario.
+	*/
+	public function deleteProduct($id) {
+		if ($this->db->delete("productos", ["id_producto" => $id])) {
+			return true;
+		}
+		else return false;
+	}
 }
-?>

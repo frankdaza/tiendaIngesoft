@@ -38,17 +38,19 @@ if (!isset($_SESSION["nombre"])) {
           <a class="navbar-brand" href="#">Tienda Virtual</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">                    
+          <ul class="nav navbar-nav navbar-left">
             <li><a href="admin.php?op=0">Inicio</a></li>
             <li><a href="">Productos</a></li>
             <li><a href="">Clientes</a></li>
             <li><a href="">Proveedores</a></li>            
-            <li><a href="">Compras</a></li>
+            <li><a href="">Compras</a></li>            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
             <li><a>
               <?php echo $_SESSION["nombre"]; ?>
-            </a></li>
+            </a></li>            
             <li><a href="../controllers/login/logoutController.php"><button type="button" class="btn btn-xs btn-danger"><b>Cerrar</b></button></a><li>
-          </ul>                    
+          </ul>
         </div>                
       </div>
     </div>
@@ -59,7 +61,7 @@ if (!isset($_SESSION["nombre"])) {
           <ul class="nav nav-sidebar">
             <li class="active"><b>Productos</b></li>
             <li><a href="admin.php?op=1">Agregar Producto</a></li>
-            <li><a href="#">Ver/Eliminar Producto</a></li>
+            <li><a href="admin.php?op=2">Ver/Eliminar Producto</a></li>
             <li><a href="#">Actualizar Producto</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -89,6 +91,7 @@ if (!isset($_SESSION["nombre"])) {
 
               if ($op == 0) require "../views/start.php";
               elseif ($op == 1) require "../views/products/agregarProducto.php";
+              elseif ($op == 2) require "../views/products/verEliminarProducto.php";
               else require "../views/start.php";
             }
             //else require "../views/start.php";
