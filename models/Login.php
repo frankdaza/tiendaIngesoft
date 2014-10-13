@@ -27,22 +27,13 @@ class Login {
 			return true;
 		}
 		else return false;
-	}
-
-	/**
-	* @return bool true si se cerró la sesión correctamente, 
-	* false de lo contrario.
-	*/
-	public function logout() {		
-		if (session_destroy()) return true;
-		else return false;
-	}
+	}	
 
 	/**
 	* @return string Retorna el nombre de un usuario.	
 	*/
 	public function getName() {
-		return $this->db->get(["usuarios", "nombre", ["email" => $this->email]]);
+		return $this->db->get("usuarios", "nombre", ["email" => $this->email]);		
 	}
 }
 ?>

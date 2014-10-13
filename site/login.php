@@ -1,6 +1,10 @@
 <?php 
 session_start();
 
+if (isset($_SESSION["nombre"])) {
+  header("Location: admin.php?op=0");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,10 +33,10 @@ session_start();
         <img src="../assets/img/login.png" alt="" class>
         <h2 class="form-signin-heading">¡Bienvenidos!</h2>
         <div class="form-group">
-          <input name="email" type="email" class="form-control" placeholder="Correo electrónico" required autofocus>
+          <input name="email" type="email" class="form-control" placeholder="Correo electrónico" maxlength="80" required autofocus>
         </div>        
         <div class="form-group">
-          <input name="password" type="password" class="form-control" placeholder="Contraseña" required>
+          <input name="password" type="password" class="form-control" placeholder="Contraseña" pattern=".{6,20}" required>
         </div>        
         <?php 
           if (isset($_SESSION["error"])) {
@@ -40,7 +44,7 @@ session_start();
             unset($_SESSION["error"]);
           }
         ?>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+        <button class="btn btn-lg btn-info btn-block" type="submit">Ingresar</button>
       </form>    
 
     </div> <!-- /container -->
