@@ -66,9 +66,9 @@ if (!isset($_SESSION["nombre"])) {
           </ul>
           <ul class="nav nav-sidebar">
             <li><b>Clientes</b></li>
-            <li><a href="#">Agregar Cliente</a></li>
-            <li><a href="#">Ver/Eliminar Cliente</a></li>
-            <li><a href="#">Actualizar Cliente</a></li>
+            <li id="addClient"><a href="admin.php?op=4">Agregar Cliente</a></li>
+            <li id="deleteClient"><a href="admin.php?op=5">Ver/Eliminar Cliente</a></li>
+            <li id="updateClient"><a href="admin.php?op=6">Actualizar Cliente</a></li>
           </ul><ul class="nav nav-sidebar">
             <li><b>Proveedores</b></li>
             <li><a href="#">Agregar Proveedor</a></li>
@@ -93,6 +93,7 @@ if (!isset($_SESSION["nombre"])) {
               elseif ($op == 1) require "../views/products/agregarProducto.php";
               elseif ($op == 2) require "../views/products/verEliminarProducto.php";
               elseif ($op == 3) require "../views/products/actualizarProducto.php";
+              elseif ($op == 4) require "../views/clients/agregarCliente.php";
               else require "../views/start.php";
             }
             else require "../views/start.php";
