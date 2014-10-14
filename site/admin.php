@@ -59,23 +59,23 @@ if (!isset($_SESSION["nombre"])) {
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar  text-center">
           <ul class="nav nav-sidebar">
-            <li class="active"><b>Productos</b></li>
-            <li><a href="admin.php?op=1">Agregar Producto</a></li>
-            <li><a href="admin.php?op=2">Ver/Eliminar Producto</a></li>
-            <li><a href="#">Actualizar Producto</a></li>
+            <li><b>Productos</b></li>
+            <li id="addProduct"><a href="admin.php?op=1">Agregar Producto</a></li>
+            <li id="deleteProduct"><a href="admin.php?op=2">Ver/Eliminar Producto</a></li>
+            <li id="updateProduct"><a href="admin.php?op=3">Actualizar Producto</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li class="active"><b>Clientes</b></li>
+            <li><b>Clientes</b></li>
             <li><a href="#">Agregar Cliente</a></li>
             <li><a href="#">Ver/Eliminar Cliente</a></li>
             <li><a href="#">Actualizar Cliente</a></li>
           </ul><ul class="nav nav-sidebar">
-            <li class="active"><b>Proveedores</b></li>
+            <li><b>Proveedores</b></li>
             <li><a href="#">Agregar Proveedor</a></li>
             <li><a href="#">Ver/Eliminar Proveedor</a></li>
             <li><a href="#">Actualizar Proveedor</a></li>
           </ul><ul class="nav nav-sidebar">
-            <li class="active"><b>Compras</b></li>
+            <li><b>Compras</b></li>
             <li><a href="#">Agregar Compra</a></li>
             <li><a href="#">Ver/Eliminar Compra</a></li>
             <li><a href="#">Actualizar Compra</a></li>
@@ -92,9 +92,10 @@ if (!isset($_SESSION["nombre"])) {
               if ($op == 0) require "../views/start.php";
               elseif ($op == 1) require "../views/products/agregarProducto.php";
               elseif ($op == 2) require "../views/products/verEliminarProducto.php";
+              elseif ($op == 3) require "../views/products/actualizarProducto.php";
               else require "../views/start.php";
             }
-            //else require "../views/start.php";
+            else require "../views/start.php";
           ?>          
 
         <footer class="text-center">

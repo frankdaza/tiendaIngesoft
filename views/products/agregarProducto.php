@@ -51,3 +51,7 @@
     </div>
   </div>
 </form>
+<script>
+  var li = document.getElementById('addProduct');
+  li.className += "active";
+</script>
