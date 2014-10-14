@@ -94,6 +94,7 @@ if (!isset($_SESSION["nombre"])) {
               elseif ($op == 2) require "../views/products/verEliminarProducto.php";
               elseif ($op == 3) require "../views/products/actualizarProducto.php";
               elseif ($op == 4) require "../views/clients/agregarCliente.php";
+              elseif ($op == 5) require "../views/clients/verEliminarCliente.php";
               else require "../views/start.php";
             }
             else require "../views/start.php";

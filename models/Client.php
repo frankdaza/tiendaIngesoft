@@ -38,6 +38,19 @@ class Client {
 		}
 		else return false;
 	}
+
+	/**
+	* @param $id ID del cliente a eliminar.
+	* @return bool true si se elimina el cliente,
+	* false de lo contrario.
+	*/
+	public function deleteClient($id) {
+		if ($this->db->delete("clientes", ["id_cliente" => $id])) {
+			return true;
+		}
+		else return false;
+	}
+
 }
 
 
