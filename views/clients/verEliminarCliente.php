@@ -29,10 +29,7 @@
 			require "../models/medoo.min.php";
 
 			// Creo una instancia de la clase medoo
-			$db = new medoo();
-
-			// Obtengo todos los ciudades en un array
-			$ciudades = $db->select("ciudades", "*");
+			$db = new medoo();		
 
 			// Obtengo todos los clientes en un array
 			$clientes = $db->select("clientes", "*");
@@ -43,16 +40,20 @@
 				}
 				else {
 					echo "<tr class='text-center'>";
-				}
+				}				
+
+				// Obtengo la cuidad de un cliente
+				$ciudades = $db->get("ciudades", "nombreciudad", ["id_ciudad" => $clientes[$i]["id_ciudad"]]);
+
 				echo "<td>".($i+1)."</td><td>".$clientes[$i]["id_cliente"]."</td><td>".$clientes[$i]["tel_cliente"]."</td>".
-						"<td>".utf8_encode($clientes[$i]["nombre_cliente"])."</td><td>".$ciudades[$i]["nombreciudad"]."</td>".
+						"<td>".utf8_encode($clientes[$i]["nombre_cliente"])."</td><td>".$ciudades."</td>".
 						"<td>".$clientes[$i]["date_cliente"]."</td>".
 						"<td><a href='../controllers/clients/deleteClientController.php?id=".$clientes[$i]["id_cliente"]."' class='btn btn-danger'>X</a></td>
 
-						<td><a href='admin.php?op=6&idTipo=".$clientes[$i]["id_cliente"].
-						"&descripcion=".$clientes[$i]["tel_cliente"].
-						"&precio=".utf8_encode($clientes[$i]["nombre_cliente"]).
-						"&referencia=".$clientes[$i]["id_ciudad"]."' class='btn btn-primary'>A</a></td></tr>";
+						<td><a href='admin.php?op=6&id_cliente=".$clientes[$i]["id_cliente"].
+						"&tel_cliente=".$clientes[$i]["tel_cliente"].
+						"&nombre_cliente=".utf8_encode($clientes[$i]["nombre_cliente"]).
+						"&id_ciudad=".$clientes[$i]["id_ciudad"]."' class='btn btn-primary'>A</a></td></tr>";
 			}
 		?>			
 
