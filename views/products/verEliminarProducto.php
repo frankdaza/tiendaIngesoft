@@ -15,7 +15,7 @@
 		<thead>
 			<tr>
 				<th class="text-center">#</th>
-				<th class="text-center">ID Tipo</th>
+				<th class="text-center">Tipo</th>
 				<th class="text-center">Descripción</th>
 				<th class="text-center">Precio</th>
 				<th class="text-center">Referencia</th>
@@ -33,6 +33,7 @@
 
 			// Obtengo todos los productos en un array
 			$productos = $db->select("productos", "*");
+			$tipoProducto = $db->select("tipo_productos", "*");
 
 			for ($i=0; $i < count($productos) ; $i++) { 
 				if ($i % 2 != 0) {
@@ -41,7 +42,9 @@
 				else {
 					echo "<tr class='text-center'>";
 				}
-				echo "<td>".($i+1)."</td><td>".$productos[$i]["id_tipoproducto"]."</td><td>".utf8_encode($productos[$i]["descripcion_producto"])."</td>".
+				$tmp = $productos[$i]["id_tipoproducto"];				
+
+				echo "<td>".($i+1)."</td><td>".$tipoProducto[($tmp-1)]["desc_tipoproducto"]."</td><td>".utf8_encode($productos[$i]["descripcion_producto"])."</td>".
 						 "<td>".$productos[$i]["precio_producto"]."</td><td>".$productos[$i]["ref_producto"]."</td>".
 						 "<td>".$productos[$i]["presentacion_producto"]."</td>						 
 							<td><a href='../controllers/products/deleteProductController.php?id=".$productos[$i]["id_producto"]."' class='btn btn-danger'>X</a></td>

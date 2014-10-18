@@ -21,13 +21,29 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="id_tipoproducto" class="col-sm-4 control-label">ID Tipo Producto</label>
-    <div class="col-sm-4">
-      <input name="id_tipoproducto" type="number" min="1" max="15" class="form-control" id="id_tipoproducto" <?php 
-        if (isset($_GET["idTipo"])) {
-          echo "value=".$_GET["idTipo"];
-        }
-      ?> required>
+    <label for="id_tipoproducto" class="col-sm-4 control-label">Tipo Producto</label>
+    <div class="col-sm-4">      
+      <select name="id_tipoproducto" id="id_tipoproducto" class="form-control" required>
+        <?php 
+          require "../models/medoo.min.php";
+
+          // Creo una instancia de la clase medoo
+          $db = new medoo();
+
+          // Obtengo todos los tipo productos en un array
+          $tipo_productos = $db->select("tipo_productos", "*");
+
+          if (isset($_GET["idTipo"])) {
+            $nombreTipoProducto = $db->get("tipo_productos", "desc_tipoproducto", ["id_tipoproducto" => $_GET["idTipo"]]);
+
+            echo "<option value='".$idTipo."'>".$nombreTipoProducto."</option>";
+          }
+
+          for ($i=0; $i < count($tipo_productos); $i++) { 
+            echo "<option value='".$tipo_productos[$i]["id_tipoproducto"]."'>".utf8_encode($tipo_productos[$i]["desc_tipoproducto"])."</option>";
+          }
+        ?>
+      </select>
     </div>
   </div>
   <div class="form-group">
