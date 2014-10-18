@@ -7,9 +7,9 @@ $id = $_GET["id"];
 
 if ($id >= 0) {
 	// Creo una instancia de la clase Cliente
-	$client = new Provider(null, null, null, null, null);	
+	$provider = new Provider(null, null, null, null, null);	
 
-	if ($client->deleteProvider($id)) {
+	if ($provider->deleteProvider($id)) {
 		$_SESSION["exito"] = true;
 		header("Location: ../../site/admin.php?op=8");
 	}

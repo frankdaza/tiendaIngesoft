@@ -52,18 +52,18 @@ class Provider {
 	}
 
 	/**
-	* @param $id ID del proveedor a actualizar.
+	* @param $id Nit del proveedor a actualizar.
 	* @return bool true si se actualiza el proveedor,
 	* false de lo contrario.
 	*/
-	public function updateProveedor($id) {
+	public function updateProvider($id) {
 		if ($this->db->update("proveedores", [
 			"nombre_proveedor"		=> $this->nombre,
 			"id_ciudad"						=> $this->idCiudad,
 			"tel_proveedor"				=> $this->telefono,
 			"direccion_proveedor"	=> $this->direccion
 		], [
-			"id_proveedor" 				=> $this->id
+			"nit_proveedor" 			=> $id
 		])) {
 			return true;
 		}
