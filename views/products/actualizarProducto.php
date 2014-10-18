@@ -36,7 +36,7 @@
           if (isset($_GET["idTipo"])) {
             $nombreTipoProducto = $db->get("tipo_productos", "desc_tipoproducto", ["id_tipoproducto" => $_GET["idTipo"]]);
 
-            echo "<option value='".$idTipo."'>".$nombreTipoProducto."</option>";
+            echo "<option value='".$_GET["idTipo"]."'>".$nombreTipoProducto."</option>";
           }
 
           for ($i=0; $i < count($tipo_productos); $i++) { 
