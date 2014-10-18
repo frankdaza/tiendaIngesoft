@@ -51,8 +51,22 @@ class Client {
 		else return false;
 	}
 
+	/**
+	* @param $id ID del cliente a actualizar.
+	* @return bool true si se actualiza el cliente,
+	* false de lo contrario.
+	*/
+	public function updateClient($id) {
+		if ($this->db->update("clientes", [			
+			"tel_cliente"			=> $this->telefono,
+			"nombre_cliente"	=> $this->nombre,
+			"id_ciudad"				=> $this->idCiudad			
+		], [
+			"id_cliente" 			=> $this->id
+		])) {
+			return true;
+		}
+		else return false;
+	}
+
 }
-
-
-
-?>

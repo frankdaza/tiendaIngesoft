@@ -71,9 +71,9 @@ if (!isset($_SESSION["nombre"])) {
             <li id="updateClient"><a href="admin.php?op=6">Actualizar Cliente</a></li>
           </ul><ul class="nav nav-sidebar">
             <li><b>Proveedores</b></li>
-            <li><a href="#">Agregar Proveedor</a></li>
-            <li><a href="#">Ver/Eliminar Proveedor</a></li>
-            <li><a href="#">Actualizar Proveedor</a></li>
+            <li id="addProvider"><a href="admin.php?op=7">Agregar Proveedor</a></li>
+            <li id="deleteProvider"><a href="admin.php?op=8">Ver/Eliminar Proveedor</a></li>
+            <li id="updateProvider"><a href="admin.php?op=9">Actualizar Proveedor</a></li>
           </ul><ul class="nav nav-sidebar">
             <li><b>Compras</b></li>
             <li><a href="#">Agregar Compra</a></li>
@@ -96,6 +96,9 @@ if (!isset($_SESSION["nombre"])) {
               elseif ($op == 4) require "../views/clients/agregarCliente.php";
               elseif ($op == 5) require "../views/clients/verEliminarCliente.php";
               elseif ($op == 6) require "../views/clients/actualizarCliente.php";
+              elseif ($op == 7) require "../views/providers/agregarProveedor.php";
+              elseif ($op == 8) require "../views/providers/verEliminarProveedor.php";
+              elseif ($op == 9) require "../views/providers/actualizarProveedor.php";
               else require "../views/start.php";
             }
             else require "../views/start.php";
@@ -103,8 +106,8 @@ if (!isset($_SESSION["nombre"])) {
 
         <footer class="text-center">
           <br><br>
-          Desarrollo de software &middot; <a href="http://frankdaza.co" target="_blank">Frank Edward Daza González</a> <br>
-          &copy; Tienda Virtual &middot; 2014    
+          Desarrollo de software &middot; <a href="http://frankdaza.co" target="_blank">Frank Edward Daza González</a>. <br>
+          &copy; 2014 &middot; Tienda Virtual.
         </footer>  
         </div>        
       </div>

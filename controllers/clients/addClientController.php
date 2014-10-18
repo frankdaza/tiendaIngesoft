@@ -2,7 +2,7 @@
 
 require "../../models/Client.php";
 
-// Obtengo los datos de Agregar Producto
+// Obtengo los datos de Agregar Cliente
 $id_cliente		= $_POST["id_cliente"];
 $tel_cliente 	= $_POST["tel_cliente"];
 $nombre_cliente = utf8_decode($_POST["nombre_cliente"]);

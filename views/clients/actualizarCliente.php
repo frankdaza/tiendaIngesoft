@@ -34,7 +34,7 @@
     <label for="nombre_cliente" class="col-sm-4 control-label">Nombre</label>
     <div class="col-sm-4">
       <input name="nombre_cliente" type="text" maxlength="40" class="form-control" id="nombre_cliente" <?php 
-        if (isset($_GET["nombre_cliente"])) {
+        if (isset($_GET["nombre_cliente"])) {          
           echo "value=".$_GET["nombre_cliente"];
         }
       ?> required>
@@ -46,9 +46,9 @@
     	<select name="id_ciudad" class="form-control" id="id_ciudad" required>        
     		<?php         
           require "../models/medoo.min.php";
-
+          
           // Creo una instancia de la clase medoo
-          $db = new medoo();
+          $db = new medoo();        
 
           // Selecciono las ciudades con sus id de la db
           $ciudades = $db->select("ciudades", "*");
@@ -69,5 +69,5 @@
 </form>
 <script>
   var li = document.getElementById('updateClient');
-  li.className += "active";
+  li.className += "active";  
 </script>

@@ -11,7 +11,7 @@
 	}
 ?>
 <div class="table-responsive">
-	<table class="table table-bordered table-hover table-condensed">
+	<table class="table table-hover table-condensed">
 		<thead>
 			<tr>
 				<th class="text-center">#</th>
@@ -52,7 +52,7 @@
 
 						<td><a href='admin.php?op=6&id_cliente=".$clientes[$i]["id_cliente"].
 						"&tel_cliente=".$clientes[$i]["tel_cliente"].
-						"&nombre_cliente=".utf8_encode($clientes[$i]["nombre_cliente"]).
+						"&nombre_cliente=".$clientes[$i]["nombre_cliente"].
 						"&id_ciudad=".$clientes[$i]["id_ciudad"]."' class='btn btn-primary'>A</a></td></tr>";
 			}
 		?>			
