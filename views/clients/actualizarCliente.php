@@ -58,7 +58,6 @@
             echo "<option value='".$_GET["id_ciudad"]."'>".utf8_encode($ciudad)."</option>";
           }
           
-
           for ($i=0; $i < count($ciudades); $i++) { 
             
             echo "<option value='".$ciudades[$i]["id_ciudad"]."'>".utf8_encode($ciudades[$i]["nombreciudad"])."</option>";

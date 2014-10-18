@@ -43,6 +43,11 @@
           // Selecciono las ciudades con sus id de la db
           $ciudades = $db->select("ciudades", "*");
 
+          if (isset($_GET["id_ciudad"])) {
+            $ciudad = $db->get("ciudades", "nombreciudad", ["id_ciudad" => $_GET["id_ciudad"]]);
+            echo "<option value='".$_GET["id_ciudad"]."'>".utf8_encode($ciudad)."</option>";
+          }
+
           for ($i=0; $i < count($ciudades); $i++) { 
             echo "<option value='".$ciudades[$i]["id_ciudad"]."'>".utf8_encode($ciudades[$i]["nombreciudad"])."</option>";
           }
