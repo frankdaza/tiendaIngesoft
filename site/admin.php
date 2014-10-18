@@ -49,7 +49,11 @@ if (!isset($_SESSION["nombre"])) {
             <li><a>
               <?php echo $_SESSION["nombre"]; ?>
             </a></li>            
-            <li><a href="../controllers/login/logoutController.php"><button type="button" class="btn btn-xs btn-danger"><b>Cerrar</b></button></a><li>
+            <li>              
+              <a>
+                <button type="button" class="btn btn-xs btn-danger" onclick="window.location.href='../controllers/login/logoutController.php'"><b>Cerrar</b></button>
+              </a>
+            <li>
           </ul>
         </div>                
       </div>
