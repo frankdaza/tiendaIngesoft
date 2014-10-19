@@ -81,7 +81,7 @@ if (!isset($_SESSION["nombre"])) {
           </ul><ul class="nav nav-sidebar">
             <li><b>Compras</b></li>
             <li id="makePurchase"><a href="admin.php?op=10">Realizar Compra</a></li>
-            <li id="seePurchases"><a href="admin.php?op=11" >Ver Compras</a></li>
+            <li id="purchaseHistory"><a href="admin.php?op=11" >Historial de Compras</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -103,6 +103,7 @@ if (!isset($_SESSION["nombre"])) {
               elseif ($op == 8) require "../views/providers/verEliminarProveedor.php";
               elseif ($op == 9) require "../views/providers/actualizarProveedor.php";
               elseif ($op == 10) require "../views/purchases/realizarCompra.php";
+              elseif ($op == 11) require "../views/purchases/historialCompras.php";
               else require "../views/start.php";
             }
             else require "../views/start.php";
