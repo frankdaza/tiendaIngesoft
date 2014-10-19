@@ -80,9 +80,8 @@ if (!isset($_SESSION["nombre"])) {
             <li id="updateProvider"><a href="admin.php?op=9">Actualizar Proveedor</a></li>
           </ul><ul class="nav nav-sidebar">
             <li><b>Compras</b></li>
-            <li><a href="#">Agregar Compra</a></li>
-            <li><a href="#">Ver/Eliminar Compra</a></li>
-            <li><a href="#">Actualizar Compra</a></li>
+            <li id="makePurchase"><a href="admin.php?op=10">Realizar Compra</a></li>
+            <li id="seePurchases"><a href="admin.php?op=11" >Ver Compras</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -103,6 +102,7 @@ if (!isset($_SESSION["nombre"])) {
               elseif ($op == 7) require "../views/providers/agregarProveedor.php";
               elseif ($op == 8) require "../views/providers/verEliminarProveedor.php";
               elseif ($op == 9) require "../views/providers/actualizarProveedor.php";
+              elseif ($op == 10) require "../views/purchases/realizarCompra.php";
               else require "../views/start.php";
             }
             else require "../views/start.php";
